@@ -129,7 +129,7 @@ SVN 元数据只记录源根目录的基础修订与 dirty 状态，文件级混
 核心 `init`、`status`、`inventory` 和 `verify` 不需要额外依赖。首次使用 `import` 时，在项目根安装技能 `package.json` 声明的固定版本：
 
 ```text
-npm install --prefix .agents/skills/code-kb --ignore-scripts --no-audit --no-fund
+npm ci --prefix .agents/skills/code-kb --ignore-scripts --no-audit --no-fund
 ```
 
 全局安装的技能改用当前成员的实际技能目录作为 `--prefix`。依赖放在本机 `node_modules`，不加入 SVN。安装器不会复制已有的 `node_modules` 或 `.git`。
