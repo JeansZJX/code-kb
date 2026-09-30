@@ -1,4 +1,6 @@
 node_modules/
 .code-kb/
 workspace.local.json
+code-kb.project.json
+.agents/
 *.log

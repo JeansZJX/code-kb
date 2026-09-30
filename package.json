@@ -1,9 +1,0 @@
-{
-  "name": "code-kb",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test", "check": "node --check skills/code-kb/scripts/kb.mjs" },
-  "devDependencies": { "web-tree-sitter": "0.27.0", "@repomix/tree-sitter-wasms": "0.1.17" }
-}
