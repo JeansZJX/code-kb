@@ -1,0 +1,35 @@
+{
+  "schema_version": 2,
+  "project_id": "sample-game",
+  "project_root_relative": "..",
+  "version_control": "svn",
+  "local_mapping": "workspace.local.json",
+  "catalog": "catalog/index.json",
+  "code_index": "code/index.json",
+  "rule_proposals": "proposals/",
+  "rule_statuses": ["documented", "proposed", "accepted", "superseded"],
+  "ignored_project_paths": ["artifacts"],
+  "modules": {
+    "client": {
+      "active_source": "client-main",
+      "inventory_roots": ["Assets/Scripts"],
+      "extensions": [".cs", ".asmdef"],
+      "exclude_dirs": [],
+      "rules": ["rules/shared.md", "rules/client.md"],
+      "sources": {
+        "client-main": { "project_relative_root": "apps/unity/trunk", "code_status": "planned", "role": "mainline" },
+        "client-feature-example": { "project_relative_root": "apps/unity/branches/example-feature", "code_status": "planned", "role": "feature-branch" }
+      }
+    },
+    "server": {
+      "active_source": "server-main",
+      "inventory_roots": ["src"],
+      "extensions": [".go", ".ts", ".cs", ".proto"],
+      "exclude_dirs": [],
+      "rules": ["rules/shared.md", "rules/server.md"],
+      "sources": {
+        "server-main": { "project_relative_root": "services/game/trunk", "code_status": "planned", "role": "mainline" }
+      }
+    }
+  }
+}

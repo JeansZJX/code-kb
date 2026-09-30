@@ -13,7 +13,7 @@
 | 项目根的 `code-kb.project.json` | 知识库的相对位置 | 项目维护者 |
 | 本机 `workspace.local.json` | 可选的本机代码源路径映射 | 当前成员，排除 SVN 提交 |
 
-项目的协议、业务代码、内部架构和真实符号记录留在项目 SVN。示例只说明 Unity 客户端、待接入服务端和主干切换的目录配置。
+项目的协议、业务代码、内部架构和真实符号记录留在项目 SVN。包内示例使用虚构目录，只说明客户端、服务端、主线和分支如何配置；使用前按自己的项目调整。
 
 ## 安装技能
 
@@ -36,6 +36,8 @@ $skill-installer 安装 https://github.com/JeansZJX/code-kb/tree/main/skills/cod
 
 `main` 适合首次体验。团队稳定使用时，把链接中的 `main` 换成维护者选定的 tag 或完整 commit SHA，记录在团队文档中。全局安装影响当前成员的多个项目，版本由各自维护。安装不会自动追踪 GitHub 更新。
 
+以下命令按项目内安装展示。全局安装时，将 `.agents/skills/code-kb` 替换为当前成员实际的 `code-kb` 技能目录，包括 `node` 脚本路径与 npm 的 `--prefix` 参数。
+
 ## 项目负责人做一次
 
 安装通用技能后，在 SVN 项目根执行：
@@ -46,7 +48,7 @@ node .agents/skills/code-kb/scripts/kb.mjs init --project-root . --preset unity-
 
 其他技术栈用 `--preset generic`，再按实际语言设置模块路径和扩展名。初始化会生成知识库和项目入口；它保留已有文件，不提交 SVN，也不自动确认项目规则。安装技能与初始化项目是两项独立操作。
 
-随后修改 `.code-kb/manifest.json`：确认项目编号、代码源目录、扫描范围和排除项。登记现有临时主干和未来正式主干时，为它们保留不同的 `source_id`；正式主干尚未接入时保持 `planned`。配置说明见 [configuration.md](skills/code-kb/references/configuration.md)。
+随后修改 `.code-kb/manifest.json`：确认项目编号、代码源目录、扫描范围和排除项。为各条主线和分支保留不同的 `source_id`；尚未接入的代码源保持 `planned`。配置说明见 [configuration.md](skills/code-kb/references/configuration.md)。
 
 补充团队已经确认的规范，并记录确认依据。名称、模块职责、依赖方向、禁止直接调用的入口、生成代码的位置、协议约束等都放进项目知识库。初始化的规则状态包括 `accepted`、`proposed`、`documented` 和 `superseded`；已有项目保留自己的状态名。新生成的实现不能自行变成团队规范。
 

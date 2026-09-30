@@ -1,0 +1,4 @@
+node_modules/
+.code-kb/
+workspace.local.json
+*.log
