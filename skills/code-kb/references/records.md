@@ -24,12 +24,15 @@
 
 ## 功能卡
 
+功能卡是简短知识条目的格式，不表示技能增加了一项内置功能。通用机制记录项目公共接口的用法；业务模块条目仅在有共享、复用或重要约束需要时建立。两者都不能自动成为团队规范。
+
 文件：`features/client-main/inventory-refresh.md`。功能 ID 使用 `来源ID/功能ID`，变更单按此引用，避免不同来源同名混淆。
 
 ```markdown
 # inventory-refresh：背包刷新
 
 - 功能 ID：client-main/inventory-refresh。
+- 类别：业务模块知识。
 - 状态：可用；维护者：客户端功能负责人。
 - 职责：在背包数据变更后通知界面刷新。
 - 入口：Client/main/Assets/Scripts/Inventory/InventoryRefresh.cs，InventoryRefresh.Notify(int itemId)。itemId 为发生变化的物品编号；无返回值。
