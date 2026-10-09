@@ -85,8 +85,8 @@ try {
   console.log(`Installed ${files.length} packaged files to ${destination}`);
   if (replace) console.log('Only packaged files were overwritten. Unrelated or obsolete files were retained; review them when upgrading.');
   if (fs.existsSync(path.join(projectRoot, 'code-kb.project.json')) || fs.existsSync(path.join(projectRoot, '.code-kb', 'manifest.json'))) {
-    console.log('Existing project knowledge was preserved. No initialization is needed.');
-  } else console.log('Use the installed kb.mjs init command once to create this project knowledge base.');
+    console.log('Existing project knowledge was preserved. Use the skill to read its source list and feature cards.');
+  } else console.log('Use the skill to prepare a project knowledge folder and a relative code-kb.project.json entry.');
 } catch (error) {
   fail(error.message);
 }
